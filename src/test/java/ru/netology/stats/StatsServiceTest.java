@@ -19,39 +19,39 @@ public class StatsServiceTest {
     @Test
     void averageAmountTest() {
         StatsService average = new StatsService();
-        int expected1 = 15;
+        int expected = 15;
         int actual = average.averageAmount(numberOfSales);
-        Assertions.assertEquals(expected1, actual);;
+        Assertions.assertEquals(expected, actual);;
     }
 
     @Test
     void maxMonthTest() {
         StatsService maxMonth = new StatsService();
-        int expected2 = 8;
+        int expected = 8;
         int actual = maxMonth.maxMonth(numberOfSales);
-        Assertions.assertEquals(expected2, actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
     void minMonthTest() {
         StatsService minMonth = new StatsService();
-        int expected3 = 9;
+        int expected = 9;
         int actual = minMonth.minMonth(numberOfSales);
-        Assertions.assertEquals(expected3, actual);
+        Assertions.assertEquals(expected, actual);
     }
     @Test
     void belowAverageTest() {
         StatsService belowAverage= new StatsService();
-        int expected4 = 5;
+        int expected = 5;
         int actual = belowAverage.belowAverageTest1(numberOfSales);
-        Assertions.assertEquals(expected4, actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
     void aboveAverageTest() {
         StatsService aboveAverage= new StatsService();
-        int expected5 = 5;
+        int expected = 5;
         int actual = aboveAverage.aboveAverage(numberOfSales);
-        Assertions.assertEquals(expected5, actual);
+        Assertions.assertEquals(expected, actual);
     }
 }

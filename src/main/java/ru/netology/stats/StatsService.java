@@ -1,13 +1,12 @@
 package ru.netology.stats;
 
 public class StatsService {
-    int[] numberOfSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+    //int[] numberOfSales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
     public int salesAmount(int[] numberOfSales) {
         int amount = 0;
         for (int i = 0; i < numberOfSales.length; i++) {
             amount += numberOfSales[i];
         }
-        System.out.println("Сумма продаж - " + amount);
         return amount;
     }
 
@@ -17,7 +16,6 @@ public class StatsService {
             sum += numberOfSale;
         }
         int average = sum / numberOfSales.length;
-        System.out.println("Средняя сумма продаж в месяц - " + average);
         return average;
     }
 
@@ -31,7 +29,6 @@ public class StatsService {
             month = month + 1;
         }
         maxMonth = maxMonth + 1;
-        System.out.println("Номер месяца, в котором был пик продаж - " + maxMonth);
         return maxMonth;
     }
 
@@ -45,39 +42,28 @@ public class StatsService {
             month = month + 1;
         }
         minMonth = minMonth + 1;
-        System.out.println("Номер месяца, в котором был минимум продаж - " + minMonth);
         return minMonth;
     }
 
     public int belowAverageTest1(int[] numberOfSales) {
-        int sum = 0;
-        for (int numberOfSale : numberOfSales) {
-            sum += numberOfSale;
-        }
-        int average = sum / numberOfSales.length;
+        int average = averageAmount(numberOfSales);
         int belowAverage = 0;
         for (int numberOfSale : numberOfSales) {
             if (numberOfSale < average) {
                 belowAverage = belowAverage + 1;
             }
         }
-        System.out.println("Кол-во месяцев, в которых продажи были ниже среднего - " + belowAverage);
         return belowAverage;
     }
 
     public int aboveAverage(int[] numberOfSales) {
-        int sum = 0;
-        for (int numberOfSale : numberOfSales) {
-            sum += numberOfSale;
-        }
-        int average = sum / numberOfSales.length;
+        int average = averageAmount(numberOfSales);
         int aboveAverage = 0;
         for (int numberOfSale : numberOfSales) {
             if (numberOfSale > average) {
                 aboveAverage = aboveAverage + 1;
             }
         }
-        System.out.println("Кол-во месяцев, в которых продажи были выше среднего - " + aboveAverage);
         return aboveAverage;
     }
 
